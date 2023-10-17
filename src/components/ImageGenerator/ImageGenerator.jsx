@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import Spinner from '../spinner/Spinner';
 import './ImageGenerator.css';
 import defaultImage from '/default-image.svg';
 
@@ -14,6 +15,8 @@ export const ImageGenerator = () => {
       return 0;
     }
 
+    setLoading(true);
+
     const response = await fetch(API_URL, {
       method: 'POST',
       headers: {
@@ -22,7 +25,7 @@ export const ImageGenerator = () => {
         'User-Agent': 'Chrome',
       },
       body: JSON.stringify({
-        prompt: inputRef.current.value, // TODO: check without brackets
+        prompt: inputRef.current.value,
         n: 1,
         size: '512x512',
       }),
@@ -32,7 +35,13 @@ export const ImageGenerator = () => {
     const dataArray = data.data;
 
     setImageUrl(dataArray[0].url);
+
+    setLoading(false);
   };
+
+  if (loading) {
+    return <Spinner />;
+  }
 
   return (
     <div className="ai-image-generator">
