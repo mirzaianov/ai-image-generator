@@ -1,10 +1,15 @@
+:root {
+  --primary-color: #de1b89;
+}
+
 .ai-image-generator {
   display: flex;
   flex-direction: column;
-  margin: auto;
+  /* margin: auto; */
+  justify-content: center;
   align-items: center;
-  margin-top: 80px;
-  margin-bottom: 20px;
+  /* margin-top: 80px; */
+  /* margin-bottom: 20px; */
   gap: 30px;
 }
 
@@ -15,12 +20,15 @@
 }
 
 .header span {
-  color: #de1b89;
+  color: var(--primary-color);
   font-weight: 600;
 }
 
 .img-loading {
+  position: relative;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -62,6 +70,10 @@
   height: 85px;
   font-size: 20px;
   border-radius: 50px;
-  background-color: #de1b89;
+  background-color: var(--primary-color);
   cursor: pointer;
+}
+
+.spinner {
+  position: absolute;
 }

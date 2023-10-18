@@ -1,7 +1,9 @@
 import { useRef, useState } from 'react';
 import Spinner from '../spinner/Spinner';
-import './ImageGenerator.css';
+
 import defaultImage from '/default-image.svg';
+
+import './ImageGenerator.scss';
 
 const API_URL = 'https://api.openai.com/v1/images/generations';
 
@@ -39,10 +41,6 @@ export const ImageGenerator = () => {
     setLoading(false);
   };
 
-  if (loading) {
-    return <Spinner />;
-  }
-
   return (
     <div className="ai-image-generator">
       <div className="header">
@@ -55,6 +53,7 @@ export const ImageGenerator = () => {
             alt="Girl"
           />
         </div>
+        <div className="spinner">{loading && <Spinner />}</div>
       </div>
       <div className="search-box">
         <input

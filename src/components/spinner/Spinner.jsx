@@ -15,20 +15,20 @@ export default function Spinner() {
           cx="16"
           cy="64"
           r="16"
-          fill="#de1b89"
+          fill="rgb(222, 27, 137)"
         />
         <circle
           cx="16"
           cy="64"
           r="16"
-          fill="#e967b0"
+          fill="rgb(233, 103, 176)"
           transform="rotate(45,64,64)"
         />
         <circle
           cx="16"
           cy="64"
           r="16"
-          fill="#f19fcd"
+          fill="rgb(241, 159, 205)"
           transform="rotate(90,64,64)"
         />
         <circle
