@@ -1,4 +1,12 @@
 export default function Spinner() {
+  const saturation = 50;
+  const circle1 = `hsl(326, 78%, ${saturation}%)`;
+  const circle2 = `hsl(326, 78%, ${saturation + 10}%)`;
+  const circle3 = `hsl(326, 78%, ${saturation + 20}%)`;
+  const circle4 = `hsl(326, 78%, ${saturation + 30}%)`;
+  const circle5 = `hsl(326, 78%, ${saturation + 40}%)`;
+  const circle6 = `hsl(326, 78%, ${saturation + 45}%)`;
+
   return (
     <svg
       xmlns:svg="http://www.w3.org/2000/svg"
@@ -15,55 +23,55 @@ export default function Spinner() {
           cx="16"
           cy="64"
           r="16"
-          fill="rgb(222, 27, 137)"
+          fill={circle1}
         />
         <circle
           cx="16"
           cy="64"
           r="16"
-          fill="rgb(233, 103, 176)"
+          fill={circle2}
           transform="rotate(45,64,64)"
         />
         <circle
           cx="16"
           cy="64"
           r="16"
-          fill="rgb(241, 159, 205)"
+          fill={circle3}
           transform="rotate(90,64,64)"
         />
         <circle
           cx="16"
           cy="64"
           r="16"
-          fill="#f8d1e7"
+          fill={circle4}
           transform="rotate(135,64,64)"
         />
         <circle
           cx="16"
           cy="64"
           r="16"
-          fill="#fbe4f1"
+          fill={circle5}
           transform="rotate(180,64,64)"
         />
         <circle
           cx="16"
           cy="64"
           r="16"
-          fill="#fbe4f1"
+          fill={circle6}
           transform="rotate(225,64,64)"
         />
         <circle
           cx="16"
           cy="64"
           r="16"
-          fill="#fbe4f1"
+          fill={circle6}
           transform="rotate(270,64,64)"
         />
         <circle
           cx="16"
           cy="64"
           r="16"
-          fill="#fbe4f1"
+          fill={circle6}
           transform="rotate(315,64,64)"
         />
         <animateTransform

@@ -1,16 +1,26 @@
+@import 'src/variables.scss';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
 body {
+  font-family: 'Varela Round', sans-serif;
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  // min-width: 320px;
   min-height: 100vh;
-  background-color: #0f1b21;
-  color: white;
+  background-color: $main-background-color;
+  color: $main-text-color;
 }
 
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  // max-width: 1280px;
+  // padding: 2rem;
+  // text-align: center;
 }

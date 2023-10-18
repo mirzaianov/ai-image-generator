@@ -1,1 +1,122 @@
+@import 'src/variables.scss';
 
+.container {
+  width: 90%;
+  // max-width: 550px;
+  margin: 0 auto;
+}
+
+.app {
+  padding-block: $main-distance;
+  display: flex;
+  flex-direction: column;
+  /* margin: auto; */
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 80px; */
+  /* margin-bottom: 20px; */
+  gap: $main-distance;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Righteous', sans-serif;
+  font-weight: 500;
+  // padding-bottom: 30px;
+  text-align: center;
+  line-height: 1;
+  &--main {
+    font-size: $header-size;
+  }
+  &--accent {
+    font-size: $header-size;
+    color: $main-color;
+    // font-weight: 600;
+  }
+}
+
+.img-loading {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.img-loading img {
+  display: block;
+  width: 100%;
+  max-width: 512px;
+}
+
+.search-box {
+  display: flex;
+  flex-direction: column;
+  // width: 90%;
+  // height: 95px;
+  justify-content: space-around;
+  align-items: center;
+  gap: $main-distance;
+  // border-radius: 50px;
+  // background-color: $search-box-color;
+}
+
+.search-input {
+  font-family: 'Varela Round', sans-serif;
+  // width: 600px;
+  width: 100%;
+  height: 50px;
+  background-color: $search-box-color;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  color: $main-text-color;
+  padding-inline: $main-distance;
+  border-radius: 500px;
+}
+
+.search-input::placeholder {
+  font-family: 'Varela Round', sans-serif;
+  color: $placeholder-color;
+  font-size: 1rem;
+}
+
+.btns {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: $main-distance;
+}
+
+.btn {
+  font-family: 'Varela Round', sans-serif;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 500px;
+  // width: 256px;
+  padding-block: 0.5em;
+  cursor: pointer;
+  background-color: $main-color;
+  color: $main-text-color;
+  font-size: 1.25rem;
+}
+
+.btn--download {
+  background-color: $placeholder-color;
+}
+
+.spinner {
+  position: absolute;
+}
+
+@media (min-width: 550px) {
+  .container {
+    width: 512px;
+  }
+}
