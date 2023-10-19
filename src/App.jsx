@@ -13,6 +13,10 @@ function App() {
 
   const inputRef = useRef(null);
 
+  const resetRef = () => {
+    inputRef.current.value = '';
+  };
+
   const imageGenerator = async () => {
     if (inputRef.current.value === '') {
       return 0;
@@ -37,9 +41,11 @@ function App() {
     const data = await response.json();
     const dataArray = data.data;
 
-    setImageUrl(dataArray[0].url);
-
-    setLoading(false);
+    setTimeout(() => {
+      setImageUrl(dataArray[0].url);
+      resetRef();
+      setLoading(false);
+    }, 0);
   };
 
   return (
