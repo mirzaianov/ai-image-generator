@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { saveAs } from 'file-saver';
 import Spinner from './Spinner.jsx';
 
 import defaultImage from '/default-image.svg';
@@ -17,14 +18,8 @@ function App() {
     inputRef.current.value = '';
   };
 
-  const imageGenerator = async () => {
-    if (inputRef.current.value === '') {
-      return 0;
-    }
-
-    setLoading(true);
-
-    const response = await fetch(API_URL, {
+  const fetchData = async () => {
+    return await fetch(API_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -37,16 +32,55 @@ function App() {
         size: '512x512',
       }),
     });
+  };
 
+  const imageGenerator = async () => {
+    if (inputRef.current.value === '') {
+      return 0;
+    }
+
+    setLoading(true);
+
+    const response = await fetchData();
     const data = await response.json();
     const dataArray = data.data;
+    const image = dataArray[0].url;
 
     setTimeout(() => {
-      setImageUrl(dataArray[0].url);
+      setImageUrl(image);
       resetRef();
       setLoading(false);
     }, 0);
   };
+
+  const handleImageDownload = () => {
+    if (imageUrl === '/') {
+      return 0;
+    }
+
+    saveAs(imageUrl, 'image.png');
+  };
+
+  // const handleImageDownload = async (
+  //   imageSrc,
+  //   nameOfDownload = 'my-image.png',
+  // ) => {
+  //   const response = await fetch(imageSrc);
+
+  //   const blobImage = await response.blob();
+
+  //   const href = URL.createObjectURL(blobImage);
+
+  //   const anchorElement = document.createElement('a');
+  //   anchorElement.href = href;
+  //   anchorElement.download = nameOfDownload;
+
+  //   document.body.appendChild(anchorElement);
+  //   anchorElement.click();
+
+  //   document.body.removeChild(anchorElement);
+  //   window.URL.revokeObjectURL(href);
+  // };
 
   return (
     <div className="app container">
@@ -85,6 +119,7 @@ function App() {
             className="btn btn--download"
             type="button"
             value="Download"
+            onClick={handleImageDownload}
           />
         </div>
       </form>
