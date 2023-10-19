@@ -14,9 +14,9 @@ function App() {
 
   const inputRef = useRef(null);
 
-  const resetRef = () => {
-    inputRef.current.value = '';
-  };
+  // const resetRef = () => {
+  //   inputRef.current.value = '';
+  // };
 
   const fetchData = async () => {
     return await fetch(API_URL, {
@@ -48,7 +48,7 @@ function App() {
 
     setTimeout(() => {
       setImageUrl(image);
-      resetRef();
+      // resetRef();
       setLoading(false);
     }, 0);
   };
@@ -60,27 +60,6 @@ function App() {
 
     saveAs(imageUrl, 'image.png');
   };
-
-  // const handleImageDownload = async (
-  //   imageSrc,
-  //   nameOfDownload = 'my-image.png',
-  // ) => {
-  //   const response = await fetch(imageSrc);
-
-  //   const blobImage = await response.blob();
-
-  //   const href = URL.createObjectURL(blobImage);
-
-  //   const anchorElement = document.createElement('a');
-  //   anchorElement.href = href;
-  //   anchorElement.download = nameOfDownload;
-
-  //   document.body.appendChild(anchorElement);
-  //   anchorElement.click();
-
-  //   document.body.removeChild(anchorElement);
-  //   window.URL.revokeObjectURL(href);
-  // };
 
   return (
     <div className="app container">
