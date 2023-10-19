@@ -57,23 +57,31 @@ function App() {
         </div>
         <div className="spinner">{loading && <Spinner />}</div>
       </div>
-      <div className="search-box">
+      <form
+        className="search-box"
+        action="#"
+      >
         <input
+          required
           type="text"
           ref={inputRef}
           className="search-input"
           placeholder="Describe What You Want to See"
         />
         <div className="btns">
-          <button
+          <input
             className="btn"
+            type="submit"
+            value="Generate"
             onClick={() => imageGenerator()}
-          >
-            Generate
-          </button>
-          <button className="btn btn--download">Download</button>
+          />
+          <input
+            className="btn btn--download"
+            type="button"
+            value="Download"
+          />
         </div>
-      </div>
+      </form>
     </div>
   );
 }
