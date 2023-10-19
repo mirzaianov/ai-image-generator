@@ -27,7 +27,7 @@
   font-weight: 500;
   // padding-bottom: 30px;
   text-align: center;
-  line-height: 1;
+  line-height: 1.25;
   &--main {
     font-size: $header-size;
   }
@@ -53,6 +53,7 @@
 }
 
 .search-box {
+  width: 100%;
   display: flex;
   flex-direction: column;
   // width: 90%;
@@ -68,13 +69,14 @@
   font-family: 'Varela Round', sans-serif;
   // width: 600px;
   width: 100%;
-  height: 50px;
+  // height: 50px;
+  padding-block: 0.65em;
   background-color: $search-box-color;
   border: none;
   outline: none;
   font-size: 18px;
   color: $main-text-color;
-  padding-inline: $main-distance;
+  padding-inline: calc(1.25 * $main-distance);
   border-radius: 500px;
 }
 
@@ -115,8 +117,39 @@
   position: absolute;
 }
 
+@media (min-width: 350px) {
+  .header {
+    &--main {
+      font-size: calc(1.4 * $header-size);
+    }
+    &--accent {
+      font-size: calc(1.4 * $header-size);
+    }
+  }
+
+  .search-input {
+    padding-block: 0.85em;
+  }
+
+  .btn {
+    padding-block: 0.7em;
+  }
+}
+
 @media (min-width: 550px) {
   .container {
     width: 512px;
+  }
+
+  .app {
+    gap: $secondary-distance;
+  }
+
+  .header {
+    flex-direction: row;
+  }
+
+  .search-box {
+    gap: $secondary-distance;
   }
 }
