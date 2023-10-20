@@ -98,7 +98,7 @@ function App() {
             className="btn btn--download"
             type="button"
             value="Download"
-            onClick={handleImageDownload}
+            onClick={() => handleImageDownload(imageUrl)}
           />
         </div>
       </form>
