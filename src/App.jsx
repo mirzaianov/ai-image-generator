@@ -44,13 +44,10 @@ function App() {
     const response = await fetchData();
     const data = await response.json();
     const dataArray = data.data;
-    const image = dataArray[0].url;
 
-    setTimeout(() => {
-      setImageUrl(image);
-      // resetRef();
-      setLoading(false);
-    }, 0);
+    setImageUrl(dataArray[0].url);
+    // resetRef();
+    setLoading(false);
   };
 
   const handleImageDownload = () => {
@@ -59,6 +56,12 @@ function App() {
     }
 
     saveAs(imageUrl, 'image.png');
+  };
+
+  const handleKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      imageGenerator();
+    }
   };
 
   return (
@@ -76,9 +79,9 @@ function App() {
         </div>
         <div className="spinner">{loading && <Spinner />}</div>
       </div>
-      <form
+      <div
         className="search-box"
-        action="#"
+        // action="#"
       >
         <input
           required
@@ -86,6 +89,7 @@ function App() {
           ref={inputRef}
           className="search-input"
           placeholder="Describe What You Want to See"
+          onKeyDown={handleKeyDown}
         />
         <div className="btns">
           <input
@@ -101,7 +105,7 @@ function App() {
             onClick={() => handleImageDownload(imageUrl)}
           />
         </div>
-      </form>
+      </div>
     </div>
   );
 }
