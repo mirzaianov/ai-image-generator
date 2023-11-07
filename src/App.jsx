@@ -76,13 +76,17 @@ function App() {
           imageGenerator();
         }}
       >
-        <input
-          required
-          type="text"
-          ref={inputRef}
-          className="search-input"
-          placeholder="Describe What You Want to See"
-        />
+        <div className="input-box">
+          <input
+            required
+            type="text"
+            ref={inputRef}
+            className="search-input"
+            placeholder="Describe What You Want to See"
+          />
+          <div className="reset"></div>
+        </div>
+
         <div className="btns">
           <button
             className="btn"
