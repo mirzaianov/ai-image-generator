@@ -2,7 +2,6 @@
 
 .container {
   width: 90%;
-  // max-width: 550px;
   margin: 0 auto;
 }
 
@@ -10,11 +9,8 @@
   padding-block: $main-distance;
   display: flex;
   flex-direction: column;
-  /* margin: auto; */
   justify-content: center;
   align-items: center;
-  /* margin-top: 80px; */
-  /* margin-bottom: 20px; */
   gap: $main-distance;
 }
 
@@ -25,7 +21,6 @@
   justify-content: space-between;
   font-family: 'Righteous', sans-serif;
   font-weight: 500;
-  // padding-bottom: 30px;
   text-align: center;
   line-height: 1.25;
   &--main {
@@ -34,7 +29,6 @@
   &--accent {
     font-size: $header-size;
     color: $main-color;
-    // font-weight: 600;
   }
 }
 
@@ -57,13 +51,9 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  // width: 90%;
-  // height: 95px;
   justify-content: space-around;
   align-items: center;
   gap: $main-distance;
-  // border-radius: 50px;
-  // background-color: $search-box-color;
 }
 
 .input-box {
@@ -73,9 +63,7 @@
 
 .search-input {
   font-family: 'Varela Round', sans-serif;
-  // width: 600px;
   width: 100%;
-  // height: 50px;
   padding-block: 0.65em;
   background-color: $search-box-color;
   border: none;
@@ -83,7 +71,7 @@
   font-size: 18px;
   color: $main-text-color;
   padding-left: calc(1.25 * $main-distance);
-  padding-right: calc(1.5 * 1.25 * $main-distance);
+  padding-right: calc(2.5 * 1.25 * $main-distance);
   border-radius: 500px;
 }
 
@@ -96,7 +84,8 @@
 .reset {
   position: absolute;
   top: 48%;
-  right: 2.5%;
+  right: 5%;
+  cursor: pointer;
   &::before,
   &::after {
     content: '';
@@ -129,7 +118,6 @@
   align-items: center;
   border: none;
   border-radius: 500px;
-  // width: 256px;
   padding-block: 0.5em;
   cursor: pointer;
   background-color: $main-color;
@@ -180,19 +168,4 @@
   .search-box {
     gap: $secondary-distance;
   }
-
-  // .reset {
-  //   &::before {
-  //     width: 25px;
-  //     height: 3px;
-  //     top: 19px;
-  //     right: 14px;
-  //   }
-  //   &::after {
-  //     width: 25px;
-  //     height: 3px;
-  //     top: 19px;
-  //     right: 14px;
-  //   }
-  // }
 }

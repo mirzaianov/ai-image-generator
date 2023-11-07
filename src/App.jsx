@@ -9,15 +9,12 @@ import './App.scss';
 const API_URL = 'https://api.openai.com/v1/images/generations';
 
 function App() {
-  console.log('render');
-
   const [imageUrl, setImageUrl] = useState('/');
   const [loading, setLoading] = useState(false);
 
   const inputRef = useRef(null);
 
   const imageGenerator = async () => {
-    console.log('imageGenerator');
     if (inputRef.current.value === '') {
       return 0;
     }
@@ -46,12 +43,15 @@ function App() {
   };
 
   const handleImageDownload = () => {
-    console.log('handleImageDownload');
     if (imageUrl === '/') {
       return 0;
     }
 
     saveAs(imageUrl, 'image.png');
+  };
+
+  const handleReset = () => {
+    inputRef.current.value = '';
   };
 
   return (
@@ -84,7 +84,10 @@ function App() {
             className="search-input"
             placeholder="Describe What You Want to See"
           />
-          <div className="reset"></div>
+          <div
+            className="reset"
+            onClick={() => handleReset()}
+          ></div>
         </div>
 
         <div className="btns">
